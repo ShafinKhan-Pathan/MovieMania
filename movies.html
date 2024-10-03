@@ -52,9 +52,15 @@
 <section>
   <div class="container">
     <div class="row">
+      <div class="search__movie--header">
       <div class="search__title">
-
     </div>
+    <select id="filter" onchange="filterByMovies(event)">
+      <option class="option__design" value="" disabled selected>Sort</option>
+      <option class="option__design" value="NEWEST_YEAR">Sort by newest year</option>
+      <option class="option__design" value="OLDEST_YEAR">Sort by oldest year</option>
+    </select>
+  </div>
       <div class="search__movie--wrapper">
         
         
