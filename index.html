@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <script src="index.js" defer></script>
+  <script src="movies.js"></script>
+  <script src="https://kit.fontawesome.com/d4b4020cf0.js" crossorigin="anonymous"></script>
+  <title>MovieMania</title>
+</head>
+<body>
+  <header>
+    <div class="bgimage"></div>
+    <div class="bg-overlay"></div>
+    <nav>
+      <div class="nav__wrapper">
+        <figure>
+          <img class="brand-logo" src="./assets/MovieMania_logoTransparent.png" alt="" />
+        </figure>
+        <ul class="nav__links">
+          <li class="nav__link">
+            <a class="nav__link--anchor" href="">Home</a>
+          </li>
+          <li class="nav__link">
+            <a class="nav__link--anchor" href="">Contact</a>
+          </li>
+          <li class="nav__link">
+            <a class="nav__link--anchor" href="movies.html">Movies</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="header__content">
+      <h1 class="header__title">Browse Your Favourite Movies</h1>
+      <div class="content__wrapper">
+        <input type="text" placeholder="   Search by name" onchange="searchResult(event)" />
+        <button type="submit" class="searchBtn">
+          <i class="fa-solid fa-magnifying-glass icon-design" onchange="searchResult(event)"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <div class="row">
+        <h1 class="title_unique__modifier">Here are some of the top rated movies</h1>
+        <div class="movie-list">
+          <div class="movies__wrapper">
+            <div class="movie">
+              <figure class="movie__figure--image">
+                <img src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg" alt="" class="movie__image">
+              </figure>
+              <div class="movie__description">
+                <h3><span class="unique__modifier">Title - </span>Guardians of the Galaxy Vol</h3>
+                <h4><span class="unique__modifier">Year - </span> 2017</h4>
+                <h4><span class="unique__modifier">Time - </span> 136 Mins</h4>
+                <h4><span class="unique__modifier">Director - </span> James Gunn</h4>
+              </div>
+            </div>
+            <div class="movie">
+              <figure class="movie__figure--image">
+                <img src="https://m.media-amazon.com/images/M/MV5BNzI0MmQyMzYtZDAzNi00ZWZiLWFjMTgtNzQwOTRjYTFlM2Y3XkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__image">
+              </figure>
+              <div class="movie__description">
+                <h3><span class="unique__modifier">Title - </span>The Amazing Spiderman 2</h3>
+                <h4><span class="unique__modifier">Year - </span> 2011</h4>
+                <h4><span class="unique__modifier">Time - </span> 124 Mins</h4>
+                <h4><span class="unique__modifier">Director - </span> Joe Johnston</h4>
+              </div>
+            </div>
+            <div class="movie">
+              <figure class="movie__figure--image">
+                <img src="https://m.media-amazon.com/images/M/MV5BOGE2NWUwMDItMjA4Yi00N2Y3LWJjMzEtMDJjZTMzZTdlZGE5XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg" alt="" class="movie__image">
+              </figure>
+              <div class="movie__description">
+                <h3 class="movie__title"><span class="unique__modifier">Title - </span>The Batman</h3>
+                <h4><span class="unique__modifier">Year - </span>2022</h4>
+                <h4><span class="unique__modifier">Time - </span>174 Mins</h4>
+                <h4><span class="unique__modifier">Director - </span>Matt Reeves</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
