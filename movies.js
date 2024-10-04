@@ -36,8 +36,8 @@ async function main(filter) {
 }
 
 function showMovieDetails(id) {
-  window.location.href = "./movie_details.html";
   localStorage.setItem("id", id);
+  window.location.href = "./movie_details.html";
 }
 function searchMovieHTML(element) {
   const moviePoster =
