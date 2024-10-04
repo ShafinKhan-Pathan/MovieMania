@@ -36,7 +36,7 @@ async function main(filter) {
 }
 
 function showMovieDetails(id) {
-  window.location.href = `${window.location.origin}/movie_details.html`;
+  window.location.href = `./movie_details.html`;
   localStorage.setItem("id", id);
 }
 function searchMovieHTML(element) {
