@@ -1,91 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="index.css" />
-  <script src="index.js" defer></script>
-  <script src="movies.js" defer></script>
-  <script src="movieDetails.js" defer></script>
-  <script src="https://kit.fontawesome.com/d4b4020cf0.js" crossorigin="anonymous"></script>
-  <title>MovieMania</title>
-</head>
-<body>
-  <header>
-    <div class="bgimage"></div>
-    <div class="bg-overlay"></div>
-    <nav>
-      <div class="nav__wrapper">
-        <figure>
-          <img class="brand-logo" src="./assets/MovieMania_logoTransparent.png" alt="" />
-        </figure>
-        <ul class="nav__links">
-          <li class="nav__link">
-            <a class="nav__link--anchor" href="#">Home</a>
-          </li>
-          <li class="nav__link">
-            <a class="nav__link--anchor" href="mailto:kshafin575@gmail.com">Contact</a>
-          </li>
-          <li class="nav__link">
-            <a class="nav__link--anchor" href="movies.html">Movies</a>
-          </li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+    <script src="movies.js"></script>
+    <script src="movieDetails.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/d4b4020cf0.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>MovieMania</title>
+  </head>
+  <body>
+    <header>
+      <div class="bgimage"></div>
+      <div class="bg-overlay"></div>
+      <nav>
+        <div class="nav__wrapper">
+          <figure>
+            <img
+              class="brand-logo"
+              src="./assets/MovieMania_logoTransparent.png"
+              alt=""
+            />
+          </figure>
+          <ul class="nav__links">
+            <li class="nav__link">
+              <a
+                class="nav__link--anchor nav__social--link nav__link--hover"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav__link">
+              <a class="nav__link--anchor" href="mailto:kshafin575@gmail.com"
+                >Contact</a
+              >
+            </li>
+            <li class="nav__link">
+              <a class="nav__link--anchor" href="movies.html">Movies</a>
+            </li>
+          </ul>
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="menu__backdrop">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fas fa-times"></i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__list">
+                <a href="index.html" class="menu__link">Home</a>
+              </li>
+              <li class="menu__list">
+                <a href="mailto:kshafin575@gmail.com" class="menu__link"
+                  >Contact</a
+                >
+              </li>
+              <li class="menu__list">
+                <a href="movies.html" class="menu__link">Movies</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="header__content">
+        <h1 class="header__title">Browse Your Favourite Movies</h1>
+        <div class="content__wrapper">
+          <input
+            type="text"
+            placeholder="   Search by name"
+            onchange="searchResult(event)"
+          />
+          <button type="submit" class="searchBtn">
+            <i
+              class="fa-solid fa-magnifying-glass icon-design"
+              onchange="searchResult(event)"
+            ></i>
+          </button>
+        </div>
       </div>
-    </nav>
-    <div class="header__content">
-      <h1 class="header__title">Browse Your Favourite Movies</h1>
-      <div class="content__wrapper">
-        <input type="text" placeholder="   Search by name" onchange="searchResult(event)" />
-        <button type="submit" class="searchBtn">
-          <i class="fa-solid fa-magnifying-glass icon-design" onchange="searchResult(event)"></i>
-        </button>
-      </div>
-    </div>
-  </header>
-  <section>
-    <div class="container">
-      <div class="row">
-        <h1 class="title_unique__modifier">Here are some of the top rated movies</h1>
-        <div class="movie-list">
-          <div class="movies__wrapper">
-            <div class="movie">
-              <figure class="movie__figure--image">
-                <img src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg" alt="" class="movie__image">
-              </figure>
-              <div class="movie__description">
-                <h3><span class="unique__modifier">Title - </span>Guardians of the Galaxy Vol</h3>
-                <h4><span class="unique__modifier">Year - </span> 2017</h4>
-                <h4><span class="unique__modifier">Time - </span> 136 Mins</h4>
-                <h4><span class="unique__modifier">Director - </span> James Gunn</h4>
-              </div>
-            </div>
-            <div class="movie">
-              <figure class="movie__figure--image">
-                <img src="https://m.media-amazon.com/images/M/MV5BNzI0MmQyMzYtZDAzNi00ZWZiLWFjMTgtNzQwOTRjYTFlM2Y3XkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__image">
-              </figure>
-              <div class="movie__description">
-                <h3><span class="unique__modifier">Title - </span>The Amazing Spiderman 2</h3>
-                <h4><span class="unique__modifier">Year - </span> 2011</h4>
-                <h4><span class="unique__modifier">Time - </span> 124 Mins</h4>
-                <h4><span class="unique__modifier">Director - </span> Joe Johnston</h4>
-              </div>
-            </div>
-            <div class="movie">
-              <figure class="movie__figure--image">
-                <img src="https://m.media-amazon.com/images/M/MV5BOGE2NWUwMDItMjA4Yi00N2Y3LWJjMzEtMDJjZTMzZTdlZGE5XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg" alt="" class="movie__image">
-              </figure>
-              <div class="movie__description">
-                <h3 class="movie__title"><span class="unique__modifier">Title - </span>The Batman</h3>
-                <h4><span class="unique__modifier">Year - </span>2022</h4>
-                <h4><span class="unique__modifier">Time - </span>174 Mins</h4>
-                <h4><span class="unique__modifier">Director - </span>Matt Reeves</h4>
+    </header>
+    <section>
+      <div class="container">
+        <div class="row">
+          <h1 class="title_unique__modifier">
+            Here are some of the top rated movies
+          </h1>
+          <div class="movie-list">
+            <div class="movies__wrapper">
+              <div class="movie">
+                <figure class="movie__figure--image">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
+                    alt=""
+                    class="movie__image"
+                  />
+                </figure>
+                <div class="movie__description">
+                  <h3>
+                    <span class="unique__modifier">Title - </span>Guardians of
+                    the Galaxy Vol
+                  </h3>
+                  <h4><span class="unique__modifier">Year - </span> 2017</h4>
+                  <h4>
+                    <span class="unique__modifier">Time - </span> 136 Mins
+                  </h4>
+                  <h4>
+                    <span class="unique__modifier">Director - </span> James Gunn
+                  </h4>
                 </div>
+              </div>
+              <div class="movie">
+                <figure class="movie__figure--image">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BNzY3OWQ5NDktNWQ2OC00ZjdlLThkMmItMDhhNDk3NTFiZGU4XkEyXkFqcGc@._V1_SX300.jpg"
+                    alt=""
+                    class="movie__image"
+                  />
+                </figure>
+                <div class="movie__description">
+                  <h3>
+                    <span class="unique__modifier">Title - </span>Joker
+                  </h3>
+                  <h4><span class="unique__modifier">Year - </span> 2019</h4>
+                  <h4>
+                    <span class="unique__modifier">Time - </span> 122 Mins
+                  </h4>
+                  <h4>
+                    <span class="unique__modifier">Director - </span> Todd Phillips
+                  </h4>
+                </div>
+              </div>
+              <div class="movie">
+                <figure class="movie__figure--image">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BOGE2NWUwMDItMjA4Yi00N2Y3LWJjMzEtMDJjZTMzZTdlZGE5XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg"
+                    alt=""
+                    class="movie__image"
+                  />
+                </figure>
+                <div class="movie__description">
+                  <h3 class="movie__title">
+                    <span class="unique__modifier">Title - </span>The Batman
+                  </h3>
+                  <h4><span class="unique__modifier">Year - </span>2022</h4>
+                  <h4><span class="unique__modifier">Time - </span>174 Mins</h4>
+                  <h4>
+                    <span class="unique__modifier">Director - </span>Matt Reeves
+                  </h4>
+                </div>
+              </div>
+              <div class="movie">
+                <figure class="movie__figure--image">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BNzZmOTU1ZTEtYzVhNi00NzQxLWI5ZjAtNWNhNjEwY2E3YmZjXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg"
+                    alt=""
+                    class="movie__image"
+                  />
+                </figure>
+                <div class="movie__description">
+                  <h3 class="movie__title">
+                    <span class="unique__modifier">Title - </span>Fast X
+                  </h3>
+                  <h4><span class="unique__modifier">Year - </span>2023</h4>
+                  <h4><span class="unique__modifier">Time - </span>141 Mins</h4>
+                  <h4>
+                    <span class="unique__modifier">Director - </span>Louis
+                    Leterrier
+                  </h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</body>
+    </section>
 
+    <footer>
+      <div class="container">
+        <div class="footer__wrapper">
+          <figure>
+            <img
+              src="./assets/MovieMania_logoTransparent.png"
+              class="footer__personal-logo"
+              alt=""
+            />
+          </figure>
+          <div class="footer__social--links">
+            <a
+              href="https://github.com/ShafinKhan-Pathan"
+              class="footer__social--link footer__link--hover"
+              target="_blank"
+              >GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/shafin-khan-pathan/"
+              class="footer__social--link footer__link--hover"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="mailto:kshafin575@gmail.com"
+              class="footer__social--link footer__link--hover"
+              target="_blank"
+              >Email</a
+            >
+            <a
+              href="./assets/Shafin_Pathan_Resume.pdf"
+              class="footer__social--link footer__link--hover"
+              target="_blank"
+              >Resume</a
+            >
+          </div>
+          <p class="footer__para">&copy; Shafin Khan. All Right Reserved</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

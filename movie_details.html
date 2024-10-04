@@ -32,6 +32,27 @@
                         <a class="nav__link--anchor" href="movies.html">Movies</a>
                     </li>
                 </ul>
+                <button class="btn__menu" onclick="openMenu()">
+                  <i class="fas fa-bars"></i>
+                </button>
+                <div class="menu__backdrop">
+                  <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                  <ul class="menu__links">
+                    <li class="menu__list">
+                      <a href="index.html" class="menu__link" onclick="closeMenu()">Home</a>
+                    </li>
+                    <li class="menu__list">
+                      <a href="mailto:kshafin575@gmail.com" class="menu__link"
+                      onclick="closeMenu()">Contact</a
+                      >
+                    </li>
+                    <li class="menu__list">
+                      <a href="movies.html" class="menu__link" onclick="closeMenu()">Movies</a>
+                    </li>
+                  </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -48,6 +69,34 @@
         </div>
         </div>
     </section>
+    <footer>
+        <div class="footer__container">
+          <div class="footer__wrapper">
+            <figure>
+              <img
+                src="./assets/MovieMania_logoTransparent.png"
+                class="footer__personal-logo"
+                alt=""
+              />
+            </figure>
+            <div class="footer__social--links">
+              <a href="https://github.com/ShafinKhan-Pathan" class="footer__social--link footer__link--hover" target="_blank"
+                >GitHub</a
+              >
+              <a href="https://www.linkedin.com/in/shafin-khan-pathan/" class="footer__social--link footer__link--hover" target="_blank"
+                >LinkedIn</a
+              >
+              <a href="mailto:kshafin575@gmail.com" class="footer__social--link footer__link--hover" target="_blank"
+                >Email</a
+              >
+              <a href="./assets/Shafin_Pathan_Resume.pdf" class="footer__social--link footer__link--hover" target="_blank"
+                >Resume</a
+              >
+            </div>
+            <p class="footer__para">&copy; Shafin Khan. All Right Reserved</p>
+          </div>
+        </div>
+      </footer>
 </body>
 
 </html>
