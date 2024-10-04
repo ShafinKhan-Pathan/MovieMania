@@ -3,18 +3,18 @@ const searchMovieElement = document.querySelector(".search__movie--wrapper");
 const searchTitle = document.querySelector(".search__title");
 
 async function main(filter) {
-  if (!userInputMovie){
+  if (!userInputMovie) {
     searchTitle.innerHTML = `<h1 class="movie_header--h1-error">Please search for a movie to see results!</h1>`;
-    searchMovieElement.innerHTML = ""; 
-    return
+    searchMovieElement.innerHTML = "";
+    return;
   }
-  searchMovieElement.classList += ' .loading__state'
+  searchMovieElement.classList += " .loading__state";
   const movie = await fetch(
     `http://www.omdbapi.com/?apikey=7861bc7c&s=${userInputMovie}`
   );
-  
+
   const movieData = await movie.json();
-  searchMovieElement.classList.remove('loading__state')
+  searchMovieElement.classList.remove("loading__state");
   if (filter === "NEWEST_YEAR") {
     movieData.Search.sort((a, b) => {
       return b.Year - a.Year;
@@ -35,12 +35,15 @@ async function main(filter) {
   }
 }
 
-function showMovieDetails(id){
-  window.location.href = `${window.location.origin}/movie_details.html`
-  localStorage.setItem("id", id)
+function showMovieDetails(id) {
+  window.location.href = `${window.location.origin}/movie_details.html`;
+  localStorage.setItem("id", id);
 }
 function searchMovieHTML(element) {
-  const moviePoster = element.Poster !== "N/A" ? element.Poster : "https://via.placeholder.com/300x450?text=No+Image+Available";
+  const moviePoster =
+    element.Poster !== "N/A"
+      ? element.Poster
+      : "https://via.placeholder.com/300x450?text=No+Image+Available";
   return `
       <div class="search__movie" onclick="showMovieDetails('${element.imdbID}')">
         <figure class="search__figure--image">
@@ -58,5 +61,4 @@ function filterByMovies(event) {
 }
 setTimeout(() => {
   main();
-  
 }, 1000);
