@@ -3,21 +3,23 @@
 const getID = localStorage.getItem("id")
 const movieDetailElement = document.querySelector('.movie__details')
 async function getData(){
+    movieDetailElement.classList += ' .loading__state'
     const movieDetails = await fetch(`http://www.omdbapi.com/?i=${getID}&apikey=7861bc7c`)
     const movieDetailsData = await movieDetails.json()
+    movieDetailElement.classList.remove('loading__state')
     console.log(movieDetailsData)
     if (movieDetailsData){
         movieDetailElement.innerHTML = getMovieHTML(movieDetailsData);
     }
-    console.log(movieDetailElement)
     
 }
 
 function getMovieHTML(movieDetail){
+    const movieImage = movieDetail.Poster !== "N/A" ? movieDetail.Poster : "https://via.placeholder.com/300x450?text=No+Image+Available"
     return `
             <div class="movie__details--image">
                     <figure class="movie__details--figure">
-                        <img class="movie__details-image" src="${movieDetail.Poster}"
+                        <img class="movie__details-image" src="${movieImage}"
                             alt="">
                     </figure>
                 </div>
@@ -35,4 +37,6 @@ function getMovieHTML(movieDetail){
             `
 }
 
-getData()
+setTimeout(() => {
+    getData()
+}, 1000);

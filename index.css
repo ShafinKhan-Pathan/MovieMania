@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+html, body{
+  scroll-behavior: smooth;
+}
 .container {
   padding: 20px 0;
 }
@@ -130,6 +133,7 @@ input {
 .movie__image{
   height: 450px;
   transition: all 600ms ease;
+  cursor: no-drop;
 }
 .movie__title{
   margin-top: 8px;
@@ -212,7 +216,7 @@ input {
   max-width: 1100px;
   border: 5px solid transparent;
   position: relative;
-  animation: borderAnimation 2s infinite;
+  animation: borderAnimation 3.5s infinite;
   transition: all 300ms ease;
 }
 .movie__details{
@@ -256,5 +260,33 @@ input {
     border-right: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 5px solid yellow;
+  }
+}
+
+/* LOADING STATE */
+.loading__state{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fa-spinner{
+  font-size: 52px;
+  color: rgb(12, 190, 89);
+  animation: rotate 600ms infinite linear;
+}
+.loading__state--active{
+  display: none !important;
+}
+.loading__state .loading__state--active{
+  display: block !important;
+}
+
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }
