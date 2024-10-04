@@ -4,7 +4,7 @@ const getID = localStorage.getItem("id")
 const movieDetailElement = document.querySelector('.movie__details')
 async function getData(){
     movieDetailElement.classList += ' .loading__state'
-    const movieDetails = await fetch(`http://www.omdbapi.com/?i=${getID}&apikey=7861bc7c`)
+    const movieDetails = await fetch(`https://www.omdbapi.com/?i=${getID}&apikey=7861bc7c`)
     const movieDetailsData = await movieDetails.json()
     movieDetailElement.classList.remove('loading__state')
     console.log(movieDetailsData)

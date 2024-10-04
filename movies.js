@@ -10,7 +10,7 @@ async function main(filter) {
   }
   searchMovieElement.classList += " .loading__state";
   const movie = await fetch(
-    `http://www.omdbapi.com/?apikey=7861bc7c&s=${userInputMovie}`
+    `https://www.omdbapi.com/?apikey=7861bc7c&s=${userInputMovie}`
   );
 
   const movieData = await movie.json();
