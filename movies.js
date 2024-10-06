@@ -24,7 +24,18 @@ async function main(filter) {
       return a.Year - b.Year;
     });
   }
+  // Using localeCompare to compare titles alphabetically
+  else if (filter === "A_TO_Z") {
+    movieData.Search.sort((a, b) => {
+      return a.Title.localeCompare(b.Title);
+    });
+  } else if (filter === "Z_TO_A") {
+    movieData.Search.sort((a, b) => {
+      return b.Title.localeCompare(a.Title);
+    });
+  }
   console.log(movieData);
+  // Using movieData.Search is the specific array that holds all the movie search results (each result being an object with details like title, year, poster, etc.).
   if (movieData.Search) {
     searchTitle.innerHTML = `<h1 class="movie_header-h1">Here are the search results for '${userInputMovie}'</h1>`;
     searchMovieElement.innerHTML = movieData.Search.map((element) =>
